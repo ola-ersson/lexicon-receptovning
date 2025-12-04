@@ -61,7 +61,7 @@ main {
   vertical-align: middle;
 }
 
-.content-wrapper {
+article {
   padding: 48px clamp(16px, 5%, 48px) 64px clamp(16px, 5%, 48px);
 }
 
