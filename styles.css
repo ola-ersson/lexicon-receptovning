@@ -1,14 +1,20 @@
+:root {
+  --color-primary: #a10000;
+  --color-secondary: #f9f9f9;
+  --color-accent: #ebebeb;
+}
+
 * {
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif, Arial;
 }
 
-.text-red {
-  color: #a10000;
+.text-primary {
+  color: var(--color-primary);
 }
 
-.bg-mercury {
-  background-color: #ebebeb;
+.bg-accent {
+  background-color: var(--color-accent);
 }
 
 h1,
@@ -19,38 +25,40 @@ p {
 
 h1 {
   font-weight: 700;
-  font-size: 28px;
+  font-size: 1.75rem;
 }
 
 h2 {
   font-weight: 700;
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 li {
-  line-height: 32px;
+  line-height: 2rem;
 }
 
 .mb-24 {
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 
 .mb-16 {
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 
 body {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   color: #000000;
   background-color: #a100004d;
+
   margin: 0;
 }
 
 main {
   max-width: 1280px;
-  margin: 0px auto 64px auto;
-  background-color: #f9f9f9;
+  margin: inline-start;
+  margin: 0rem auto 4rem auto;
+  background-color: var(--color-secondary);
 }
 
 .hero-image {
@@ -62,24 +70,21 @@ main {
 }
 
 article {
-  padding: 48px clamp(16px, 5%, 48px) 64px clamp(16px, 5%, 48px);
+  padding: 3rem clamp(1rem, 5%, 3rem) 4rem clamp(1rem, 5%, 3rem);
 }
 
 .description {
-  padding: 16px 8px 16px 8px;
+  padding: 1rem 0.5rem 1rem 0.5rem;
 }
 
 .image-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 24px;
-}
+  grid-gap: 1.5rem;
 
-.image-resize {
-  max-width: 580px;
-  max-height: 467px;
-  min-width: 300px;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  & .image-resize {
+    max-height: 467px;
+    width: 100%;
+    object-fit: cover;
+  }
 }
