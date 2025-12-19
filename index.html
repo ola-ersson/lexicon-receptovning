@@ -3,72 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open Sans"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="styles.css" />
     <title>Recept | Pannkakor</title>
   </head>
   <body>
+    <header>
+      <div class="logo">
+        <a class="logo-text" href="index.html"
+          >P<span class="flip-90">A</span>NNK<span class="flip-270">A</span
+          >KO<span class="flip-180">R</span></a
+        >
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/recept.html">Recept</a></li>
+          <li><a href="/error.html">Om oss</a></li>
+          <li><a href="/kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="login">LOGGA IN</button>
+    </header>
     <main id="main">
-      <img
-        class="hero-image"
-        src="/images/95bd14c6df095f9dbf4df15f8c7ab3ba0d597919.jpg"
-        alt="Pannkakor på ett fat"
-      />
-      <article>
-        <div class="title mb-24 text-primary">
-          <h1 class="">Enkelt recept på pannkakor</h1>
+      <div class="hero">
+        <img
+          class="hero-image"
+          src="/assets/images/hero.webp"
+          alt="Pannkakor på ett fat"
+        />
+        <div class="hero-text">
+          Kom och upptäck de bästa<br />
+          pannkaksrecepten!
         </div>
-        <div class="description mb-24 bg-accent">
-          <p>
-            Gör traditionella tunna pannkakor med detta enkla och goda
-            pannkaksrecept
-          </p>
-        </div>
-        <section>
-          <h2 class="mb-24">Ingredienser</h2>
-          <p>För 4 portioner</p>
-          <ul>
-            <li>2 1/2 dl vetemjöl</li>
-            <li>1/2 tsk salt</li>
-            <li>6 dl mjölk</li>
-            <li>3 ägg</li>
-            <li>smör (till stekning)</li>
-            <li>sylt, bär eller frukt till servering</li>
-          </ul>
-        </section>
-        <section>
-          <h2>Så här gör du</h2>
-          <ol>
-            <li>Blanda mjöl och salt i en bunke.</li>
-            <li>Vispa i hälften av mjölken och vispa till en slät smet.</li>
-            <li>Vispa i resten av mjölken och äggen.</li>
-            <li>Låt smeten vila ca 10 minuter.</li>
-            <li>
-              Stek tunna pannkakor i lite smör, för varje pannkaka, i en stek-
-              eller pannkakspanna.
-            </li>
-            <li>Servera med sylt, bär eller frukt</li>
-          </ol>
-        </section>
-        <section>
-          <h2 class="mb-16">Serveringsförslag</h2>
-          <div class="image-container">
-            <img
-              src="/images/968741c9106b48e3dbf2fc372582a9771186de19.jpg"
-              alt="Pannkakor på ett fat"
-              class="image-resize"
-            />
-            <img
-              src="/images/e3465b83e7b6ac3fd00e07736d4f26f7f6315ce2.jpg"
-              alt="Pannkakor på ett fat"
-              class="image-resize"
-            />
-          </div>
-        </section>
-      </article>
+      </div>
+      <section class="introduction">
+        <h1>Pannkakor till folket!</h1>
+        <p>Välj och vraka bland våra recept på supersmaskiga pankisar!</p>
+      </section>
+
+      <section class="recipe-cards">
+        <ul class="card-list">
+          <li class="card">
+            <a href="/recept.html">
+              <img src="/assets/images/pancakes-1.jpg" alt="" />
+              <h3>Enkelt recept på pannkakor</h3>
+            </a>
+          </li>
+          <li class="card">
+            <a href="/recept.html">
+              <img src="/assets/images/pancakes-2.jpg" alt="pannkakor" />
+              <h3>Pannkakor för nybörjare</h3>
+            </a>
+          </li>
+          <li class="card">
+            <a href="/recept.html">
+              <img src="/assets/images/pancakes-3.jpg" alt="pannkakor" />
+              <h3>Pannkakor med apelsin</h3>
+            </a>
+          </li>
+          <li class="card">
+            <a href="/recept.html">
+              <img src="/assets/images/pancakes-4.jpg" alt="pannkakor" />
+              <h3>Plättar med sirap</h3>
+            </a>
+          </li>
+          <li class="card">
+            <a href="/recept.html">
+              <img src="/assets/images/pancakes-5.jpg" alt="pannkakor" />
+              <h3>Pannkakor med blåbär och glass</h3>
+            </a>
+          </li>
+          <li class="card">
+            <a href="/recept.html">
+              <img src="/assets/images/pancakes-6.jpg" alt="pannkakor" />
+              <h3>Plättar med blåbär och socker</h3>
+            </a>
+          </li>
+          <li class="card">
+            <a href="/recept.html">
+              <img src="/assets/images/pancakes-7.jpg" alt="pannkakor" />
+              <h3>Pannkakor med jordgubbar och glass</h3>
+            </a>
+          </li>
+          <li class="card">
+            <a href="/recept.html">
+              <img src="/assets/images/pancakes-8.jpg" alt="pannkakor" />
+              <h3>Pannkakor med blåbär och jordgubbar</h3>
+            </a>
+          </li>
+        </ul>
+      </section>
     </main>
   </body>
 </html>

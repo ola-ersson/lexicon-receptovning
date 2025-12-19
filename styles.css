@@ -1,64 +1,284 @@
+/* ===========================
+      Fonts / @font-face    
+=========================== */
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('/assets/fonts/DMSans-VariableFont_opsz\,wght.ttf')
+    format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DM Sans Italic';
+  src: url('/assets/fonts/DMSans-Italic-VariableFont_opsz\,wght.ttf')
+    format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Caveat';
+  src: url('/assets/fonts/Caveat-VariableFont_wght.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* ===========================
+   1. ROOT / VARIABLES
+=========================== */
+
 :root {
   --color-primary: #a10000;
   --color-secondary: #f9f9f9;
   --color-accent: #ebebeb;
 }
 
-* {
+/* ===========================
+   2. RESET / NORMALIZE
+=========================== */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif, Arial;
 }
 
-.text-primary {
-  color: var(--color-primary);
-}
-
-.bg-accent {
-  background-color: var(--color-accent);
-}
-
-h1,
-h2,
-p {
+* {
   margin: 0;
 }
 
-h1 {
-  font-weight: 700;
-  font-size: 1.75rem;
+body {
+  line-height: 1.5;
 }
 
-h2 {
-  font-weight: 700;
-  font-size: 1.5rem;
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
 }
 
-li {
-  line-height: 2rem;
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
-.mb-24 {
-  margin-bottom: 1.5rem;
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
-.mb-16 {
-  margin-bottom: 1rem;
+/* ===========================
+   3. BASE / GLOBAL STYLES
+=========================== */
+
+html {
+  overflow-y: scroll;
+}
+
+button {
+  :focus {
+    background-color: (var(--color-primary));
+  }
 }
 
 body {
+  font-family: 'Open Sans', sans-serif, Arial;
   font-size: 1rem;
   font-weight: 400;
   color: #000000;
   background-color: #a100004d;
+}
 
-  margin: 0;
+/* ===========================
+   4.2 LAYOUT
+=========================== */
+
+header {
+  display: grid;
+  /* grid-template-columns:
+    [logo-start] auto
+    [logo-end links-start] auto
+    [links-end btn-start] auto
+    [btn-end]; */
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 4rem;
+  padding: 0rem 0;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  position: sticky;
+
+  div.logo {
+    /* grid-column: logo-start / logo-end; */
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    .logo-text {
+      letter-spacing: 0.05rem;
+      border: 3px solid var(--color-accent);
+      padding: 0rem 1rem;
+      border-radius: 0.5rem 1rem;
+      font-size: 1.5em;
+      white-space: nowrap;
+      margin-left: 1rem;
+
+      .flip-90 {
+        display: inline-block;
+        transform: rotate(90deg);
+      }
+
+      .flip-270 {
+        display: inline-block;
+        transform: rotate(270deg);
+      }
+
+      .flip-180 {
+        display: inline-block;
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+a.logo {
+  margin: 1rem 0;
+}
+
+nav {
+  /* grid-column: links-start / links-end; */
+  align-self: center;
+  > ul {
+    display: flex;
+    padding: 0;
+    justify-content: space-between;
+    gap: 1rem;
+
+    > li {
+      list-style: none;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      font-size: 1rem;
+    }
+  }
+}
+
+button.login {
+  /* grid-column: btn-start / btn-end; */
+  /* justify-self: end; */
+  align-self: center;
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  border: none;
+  margin: 1rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: auto;
+  border: 2px solid var(--color-primary);
+
+  &:hover {
+    background-color: var(--color-primary);
+    color: var(--color-accent);
+  }
 }
 
 main {
   max-width: 1280px;
   margin: inline-start;
-  margin: 0rem auto 4rem auto;
+  margin: 0 auto;
   background-color: var(--color-secondary);
+  padding-bottom: 1px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+
+  .hero-image {
+    grid-area: 1/1;
+    width: 100%;
+    /* height: 300px; */
+    height: clamp(200px, 25vw, 300px);
+    object-fit: cover;
+    border: 1px solid white;
+    vertical-align: middle;
+  }
+
+  .hero-text {
+    grid-area: 1/1;
+    place-self: center;
+    color: black;
+    color: black;
+    /* font-size: 4rem; */
+    font-size: clamp(2.5rem, 6.5vw, 5rem);
+    font-weight: 900;
+    text-shadow: 2px 2px 4px #ffffff;
+    background: rgba(161, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Caveat', cursive;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  .hero-recipe-image {
+    grid-area: 1/1;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border: 1px solid white;
+    vertical-align: middle;
+  }
+}
+
+main > section {
+  > ul.card-list {
+    display: grid;
+    list-style: none;
+    margin-bottom: 2rem;
+    padding: 0;
+    padding-bottom: 1px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem;
+
+    li.card {
+      display: grid;
+      border: 1px solid #a100004a;
+      overflow: hidden;
+      background-color: var(--color-secondary);
+
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border: 1px solid white;
+        vertical-align: middle;
+      }
+
+      h3 {
+        padding: 0.5rem;
+        color: var(--color-primary);
+      }
+      p {
+        padding: 0 0.5rem 1rem 0.5rem;
+        /* color: #333333; */
+        font-size: 0.9rem;
+      }
+    }
+  }
 }
 
 .hero-image {
@@ -67,6 +287,12 @@ main {
   object-fit: cover;
   border: 1px solid white;
   vertical-align: middle;
+}
+
+.introduction {
+  padding: 2rem clamp(1rem, 5%, 3rem);
+  text-align: center;
+  color: var(--color-primary);
 }
 
 article {
@@ -86,5 +312,160 @@ article {
     max-height: 467px;
     width: 100%;
     object-fit: cover;
+  }
+}
+
+.error-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  padding: 4rem 2rem;
+  color: var(--color-primary);
+}
+
+/* ===========================
+   4.2 LAYOUT  / FORM
+=========================== */
+
+.recipe-form {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem auto;
+  max-width: 500px;
+}
+
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+fieldset.recipe-form datalist {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fieldset-row {
+  display: flex;
+  gap: 1rem;
+  /* justify-content: space-between; */
+}
+
+.subscription {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+/* ===========================
+   5. COMPONENTS / MODULES
+=========================== */
+
+/* ===========================
+   6. HELPERS / UTILITIES
+=========================== */
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 2rem;
+}
+
+a {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+a:hover {
+  background-color: var(--color-accent);
+  color: black;
+  text-decoration: underline;
+  transform: scale(1.05);
+
+  a.disabled {
+    pointer-events: none;
+    color: gray;
+  }
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.bg-accent {
+  background-color: var(--color-accent);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 1.75rem;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+li {
+  line-height: 2rem;
+}
+
+.mb-24 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-16 {
+  margin-bottom: 1rem;
+}
+
+/* ===========================
+   7. MEDIA QUERIES / RESPONSIVE
+=========================== */
+
+@media (max-width: 768px) {
+  header {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 4rem 4rem;
+
+    .logo-container {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    nav {
+      grid-column: 1 / span 2;
+      grid-row: 2 / 3;
+
+      ul {
+        justify-content: space-evenly;
+        margin: 0;
+        padding: 1rem 0;
+        background-color: var(--color-accent);
+
+        a {
+          font-size: 1.12rem;
+        }
+      }
+    }
+  }
+
+  button.login {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    justify-self: end;
+    margin: 0.5rem 1rem;
   }
 }
