@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Recept | Pannkakor</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a class="logo-text" href="index.html"
+          >P<span class="flip-90">A</span>NNK<span class="flip-270">A</span
+          >KO<span class="flip-180">R</span></a
+        >
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/recept.html">Recept</a></li>
+          <li><a href="/error.html">Om oss</a></li>
+          <li><a href="/kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="login">LOGGA IN</button>
+    </header>
+    <main id="main">
+      <div class="hero">
+        <img
+          class="hero-image"
+          src="/assets/images/hero.webp"
+          alt="Pannkakor på ett fat"
+        />
+        <div class="hero-text">
+          Kom och upptäck de bästa<br />
+          pannkaksrecepten!
+        </div>
+      </div>
+      <form action="POST">
+        <fieldset class="recipe-form">
+          <legend>Skicka in ditt eget pannkaksrecept</legend>
+          <label for="name">Namn:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Skriv ditt namn här..."
+            required
+          /><br />
+          <label for="email">E-post:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Skriv din e-post här..."
+            required
+          /><br />
+          <label for="recipe">Recept:</label>
+          <input
+            type="text"
+            name="recipe"
+            id="recipe"
+            placeholder="Skriv recept här..."
+          /><br />
+          <div class="fieldset-row">
+            <fieldset class="radio-group">
+              <legend for="type">Typ av pannkakor:</legend>
+              <div class radio-item>
+                <input type="radio" id="weekday" name="type" value="weekday" />
+                <label for="weekday">Vardag</label>
+              </div>
+              <div class="radio-item">
+                <input type="radio" id="weekend" name="type" value="weekend" />
+                <label for="weekend">Helg</label>
+              </div>
+              <div class="radio-item">
+                <input type="radio" id="party" name="type" value="Party" />
+                <label for="party">Fest</label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Svårighetsgrad:</legend>
+              <select name="difficulty">
+                <option value="" disabled selected>Välj svårighetsgrad</option>
+                <option value="easy">Lätt</option>
+                <option value="medium">Medel</option>
+                <option value="hard">Svår</option>
+              </select>
+            </fieldset>
+          </div>
+          <br />
+          <label for="time" class="for">Tillagningstid (minuter):</label>
+          <input
+            type="range"
+            name="time"
+            id="time"
+            min="0"
+            max="120"
+            step="15"
+            list="interval"
+          />
+          <datalist id="interval">
+            <option value="0" label="0"></option>
+            <option value="15" label="15"></option>
+            <option value="30" label="30"></option>
+            <option value="45" label="45"></option>
+            <option value="60" label="60"></option>
+            <option value="75" label="75"></option>
+            <option value="90" label="90"></option>
+            <option value="105" label="105"></option>
+            <option value="120" label="120"></option>
+          </datalist>
+          <br />
+
+          <label for="description">Beskrivning:</label>
+          <textarea
+            name="description"
+            id="description"
+            rows="4"
+            cols="50"
+            placeholder="Skriv här..."
+          ></textarea
+          ><br />
+          <label for="ingredients">Ingredienser:</label>
+          <textarea
+            name="ingredients"
+            id="ingredients"
+            rows="4"
+            cols="50"
+            placeholder="Skriv här..."
+            required
+          ></textarea
+          ><br />
+          <label for="instructions">Instruktioner:</label>
+          <textarea
+            name="instructions"
+            id="instructions"
+            rows="4"
+            cols="50"
+            placeholder="Skriv här..."
+          ></textarea
+          ><br />
+          <div class="subscription">
+            <label for="subscribe">Prenumerera</label>
+            <input
+              type="checkbox"
+              id="subscribe"
+              name="subscribe"
+              value="yes"
+              checked
+            />
+          </div>
+
+          <button type="submit">Skicka</button>
+        </fieldset>
+      </form>
+    </main>
+  </body>
+</html>
